@@ -8,7 +8,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
-import { getOutcomeForResult, BOOKING_URL, REPORT_TITLES, AFTER_SUBMIT_COPY } from "@/content/outcomes";
+import { getOutcomeForResult, BOOKING_URL, REPORT_TITLES } from "@/content/outcomes";
 import { RESULT_COPY, KICKER_COPY } from "@/content/copy";
 import type { FullResult } from "@/lib/scoring";
 import type { ResultPageKicker } from "@/content/questions";
@@ -21,7 +21,7 @@ interface StoredPayload {
   referralCode?: string;
 }
 
-// ── Personal email domain block list (V3 spec section 3.1) ────────────────
+// ── Personal email domain block list (master section 3.3) ─────────────────
 
 const BLOCKED_DOMAINS = new Set([
   "gmail.com", "yahoo.com", "hotmail.com", "outlook.com", "live.com",
@@ -106,27 +106,22 @@ function ResultContent() {
 
   const resultCodeFromUrl = params.get("resultCode");
 
-  // Booking policy from FullResult
-  const bookingPolicy = fullResult?.resultPageBookingPolicy ?? "hide_booking";
-  const isStrongBooking = bookingPolicy === "show_strong_booking_after_submit";
-  const isSoftBooking   = bookingPolicy === "show_soft_booking_after_submit";
-  const showBookingBtn  = submitted && (isStrongBooking || isSoftBooking);
+  // Booking: only hot users see the booking button, and only after submit
+  const isStrongBooking = fullResult?.resultPageBookingPolicy === "show_strong_booking_after_submit";
+  const showBookingBtn  = submitted && isStrongBooking;
 
-  // Badge color: hot = danger, warm = warning, cold = default
+  // Badge color: hot = danger, warm / warm_low = warning, cold = default
   const badgeVariant =
     fullResult?.leadTemperature === "hot"
       ? "danger"
-      : fullResult?.leadTemperature === "warm"
+      : fullResult?.leadTemperature === "warm" || fullResult?.leadTemperature === "warm_low"
       ? "warning"
       : "default";
 
   const reportTitle = fullResult ? REPORT_TITLES[fullResult.reportKey] : "";
 
-  const afterSubmitBody = isStrongBooking
-    ? AFTER_SUBMIT_COPY.strong
-    : isSoftBooking
-    ? AFTER_SUBMIT_COPY.soft
-    : AFTER_SUBMIT_COPY.hide;
+  // Per-variant after-submit copy (master section 8, "After submit" fields)
+  const afterSubmitCopy = outcome?.afterSubmit ?? "Your report has been sent. Please check your inbox.";
 
   // ── Submit handler ───────────────────────────────────────────────────────
 
@@ -354,9 +349,8 @@ function ResultContent() {
           <div className="rounded-2xl border border-border-default bg-surface-card overflow-hidden">
             <div className="p-8 space-y-4">
               <Badge variant="success">{RESULT_COPY.submitBadge}</Badge>
-              <p className="text-sm text-text-secondary leading-relaxed whitespace-pre-line">
-                {afterSubmitBody}
-              </p>
+              <BodyText text={afterSubmitCopy} />
+              {/* Booking button shown only for hot users, only after submit */}
               {showBookingBtn && (
                 <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
                   <Button variant="primary" size="md">

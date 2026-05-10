@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { LANDING_COPY } from "@/content/copy";
 
-function IconFriction() {
+function IconTime() {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
@@ -11,7 +11,7 @@ function IconFriction() {
   );
 }
 
-function IconWorkflows() {
+function IconChart() {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path d="M18 20V10M12 20V4M6 20v-6" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
@@ -19,7 +19,7 @@ function IconWorkflows() {
   );
 }
 
-function IconStartingPoint() {
+function IconNextStep() {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
@@ -29,7 +29,7 @@ function IconStartingPoint() {
   );
 }
 
-const benefitIcons = [IconFriction, IconWorkflows, IconStartingPoint];
+const trustBarIcons = [IconTime, IconChart, IconNextStep];
 
 export default function LandingPage() {
   return (
@@ -49,10 +49,7 @@ export default function LandingPage() {
           <div className="px-8 sm:px-16 md:px-24 pt-16 pb-16 flex flex-col items-start sm:items-center text-left sm:text-center min-h-[560px]">
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-sans font-bold text-text-primary leading-[1.05] tracking-[-0.03em] mb-6">
-              Is your team productive,
-              <br className="hidden sm:inline" />
-              {" "}or just{" "}
-              <span className="text-state-warning">[busy]</span>?
+              {LANDING_COPY.headline}
             </h1>
 
             <p className="text-base sm:text-lg text-text-secondary mb-4 leading-relaxed max-w-2xl">
@@ -78,20 +75,20 @@ export default function LandingPage() {
           </div>
         </div>
 
-        {/* Feature pillars */}
+        {/* Trust bar */}
         <div className="max-w-[1320px] w-full mx-auto mt-12 grid md:grid-cols-3 gap-12 px-4 sm:px-8">
-          {LANDING_COPY.benefits.map((benefit, i) => {
-            const Icon = benefitIcons[i];
+          {LANDING_COPY.trustBar.map((item, i) => {
+            const Icon = trustBarIcons[i];
             return (
-              <div key={benefit.title} className="flex flex-col items-start sm:items-center text-left sm:text-center gap-4">
+              <div key={item.heading} className="flex flex-col items-start sm:items-center text-left sm:text-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-brand-primary-soft text-brand-primary flex items-center justify-center shrink-0">
                   <Icon />
                 </div>
                 <h2 className="text-sm sm:text-base font-sans font-semibold text-text-primary leading-snug">
-                  {benefit.title}
+                  {item.heading}
                 </h2>
                 <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
-                  {benefit.body}
+                  {item.body}
                 </p>
               </div>
             );

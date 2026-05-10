@@ -3,14 +3,19 @@ export type Track = "ai_automation";
 export type ResultCode =
   | "AI_OPERATING_LEVERAGE_HOT"
   | "AI_OPERATING_LEVERAGE_WARM"
+  | "AI_OPERATING_LEVERAGE_WARM_LOW"
   | "AI_CUSTOMER_REVENUE_HOT"
   | "AI_CUSTOMER_REVENUE_WARM"
+  | "AI_CUSTOMER_REVENUE_WARM_LOW"
   | "AI_FINANCE_BACKOFFICE_HOT"
   | "AI_FINANCE_BACKOFFICE_WARM"
+  | "AI_FINANCE_BACKOFFICE_WARM_LOW"
   | "AI_INTERNAL_WORKFLOW_HOT"
   | "AI_INTERNAL_WORKFLOW_WARM"
+  | "AI_INTERNAL_WORKFLOW_WARM_LOW"
   | "AI_CAPABILITY_GAP_HOT"
   | "AI_CAPABILITY_GAP_WARM"
+  | "AI_CAPABILITY_GAP_WARM_LOW"
   | "AI_STARTER_EXPLORATION_WARM"
   | "AI_TOO_EARLY_COLD"
   | "AI_LOW_FRICTION_COLD"
@@ -24,13 +29,14 @@ export type ReportKey =
   | "ai_capability_partner_roadmap"
   | "ai_automation_starter_guide";
 
-export type ResultPageVariant = "RP01" | "RP02" | "RP03" | "RP04" | "RP05" | "RP06";
+export type ResultPageVariant =
+  | "RP01" | "RP02" | "RP03" | "RP04" | "RP05" | "RP06"
+  | "RP07" | "RP08" | "RP09" | "RP10" | "RP11" | "RP12";
 
 export type ResultPageKicker = "failure_kicker" | "timing_kicker" | "funding_kicker";
 
 export type ResultPageBookingPolicy =
   | "show_strong_booking_after_submit"
-  | "show_soft_booking_after_submit"
   | "hide_booking";
 
 export interface Option {
@@ -121,15 +127,15 @@ export const QUESTIONS: Question[] = [
     maxSelect: 3,
     exclusiveOption: "none_of_the_above",
     options: [
-      { id: "admin_data_entry_documents",              label: "Admin, data entry, or document preparation" },
-      { id: "customer_replies_support_followups",      label: "Customer replies, support requests, or follow-ups" },
-      { id: "sales_followups_proposals_crm",           label: "Sales follow-ups, proposals, or CRM updates" },
-      { id: "finance_reporting_invoicing_tracking",    label: "Finance, reporting, invoicing, or internal tracking" },
+      { id: "admin_data_entry_documents",               label: "Admin, data entry, or document preparation" },
+      { id: "customer_replies_support_followups",       label: "Customer replies, support requests, or follow-ups" },
+      { id: "sales_followups_proposals_crm",            label: "Sales follow-ups, proposals, or CRM updates" },
+      { id: "finance_reporting_invoicing_tracking",     label: "Finance, reporting, invoicing, or internal tracking" },
       { id: "internal_coordination_handover_approvals", label: "Internal coordination, handovers, reminders, or approvals" },
-      { id: "meeting_notes_summaries_documentation",   label: "Meeting notes, summaries, documentation, or knowledge capture" },
-      { id: "research_content_marketing_campaigns",    label: "Research, content, marketing, or campaign work" },
-      { id: "not_sure_team_feels_busy",                label: "I am not sure, but the team always feels busy" },
-      { id: "none_of_the_above",                       label: "None of the above" },
+      { id: "meeting_notes_summaries_documentation",    label: "Meeting notes, summaries, documentation, or knowledge capture" },
+      { id: "research_content_marketing_campaigns",     label: "Research, content, marketing, or campaign work" },
+      { id: "not_sure_team_feels_busy",                 label: "I am not sure, but the team always feels busy" },
+      { id: "none_of_the_above",                        label: "None of the above" },
     ],
   },
 
@@ -142,11 +148,11 @@ export const QUESTIONS: Question[] = [
     prompt: "What happens when a key person is busy or on leave?",
     required: true,
     options: [
-      { id: "work_slows_down_immediately",          label: "Work slows down immediately" },
-      { id: "decisions_get_delayed",                label: "Decisions get delayed" },
-      { id: "customers_or_internal_teams_wait",     label: "Customers, leads, or internal teams wait longer than they should" },
+      { id: "work_slows_down_immediately",           label: "Work slows down immediately" },
+      { id: "decisions_get_delayed",                 label: "Decisions get delayed" },
+      { id: "customers_or_internal_teams_wait",      label: "Customers, leads, or internal teams wait longer than they should" },
       { id: "someone_can_cover_but_context_missing", label: "Someone else can cover, but context is often missing" },
-      { id: "business_continues_smoothly",          label: "The business continues smoothly because processes are clear" },
+      { id: "business_continues_smoothly",           label: "The business continues smoothly because processes are clear" },
     ],
   },
 
@@ -159,11 +165,11 @@ export const QUESTIONS: Question[] = [
     prompt: "Is your important information everywhere, in emails, WhatsApp, spreadsheets, or staff knowledge?",
     required: true,
     options: [
-      { id: "yes_information_is_everywhere",      label: "Yes, important information is everywhere" },
-      { id: "somewhat_can_find_but_takes_time",   label: "Somewhat. We can find it, but it takes time" },
-      { id: "documented_but_not_connected",       label: "Most information is documented, but not connected into workflows" },
-      { id: "mostly_organised_easy_to_retrieve",  label: "No, our information is mostly organised and easy to retrieve" },
-      { id: "not_sure",                           label: "I am not sure" },
+      { id: "yes_information_is_everywhere",     label: "Yes, important information is everywhere" },
+      { id: "somewhat_can_find_but_takes_time",  label: "Somewhat. We can find it, but it takes time" },
+      { id: "documented_but_not_connected",      label: "Most information is documented, but not connected into workflows" },
+      { id: "mostly_organised_easy_to_retrieve", label: "No, our information is mostly organised and easy to retrieve" },
+      { id: "not_sure",                          label: "I am not sure" },
     ],
   },
 
@@ -176,11 +182,11 @@ export const QUESTIONS: Question[] = [
     prompt: "Which statement best describes your current use of AI?",
     required: true,
     options: [
-      { id: "barely_use_ai",                     label: "We barely use AI" },
-      { id: "staff_use_chatgpt_individually",     label: "Some staff use ChatGPT or similar tools individually" },
-      { id: "use_ai_tools_but_no_company_system", label: "We use AI tools, but there is no company-wide system" },
-      { id: "some_workflows_automated_basic",     label: "We have automated some workflows, but they are still basic" },
-      { id: "ai_embedded_in_core_processes",      label: "AI is already embedded into core business processes" },
+      { id: "barely_use_ai",                      label: "We barely use AI" },
+      { id: "staff_use_chatgpt_individually",      label: "Some staff use ChatGPT or similar tools individually" },
+      { id: "use_ai_tools_but_no_company_system",  label: "We use AI tools, but there is no company-wide system" },
+      { id: "some_workflows_automated_basic",      label: "We have automated some workflows, but they are still basic" },
+      { id: "ai_embedded_in_core_processes",       label: "AI is already embedded into core business processes" },
     ],
   },
 
@@ -190,16 +196,16 @@ export const QUESTIONS: Question[] = [
     track: "ai_automation",
     order: 8,
     type: "single_select",
-    prompt: "What is your biggest reason for not implementing AI automation?",
+    prompt: "What is your biggest reason for not using AI?",
     required: true,
     options: [
-      { id: "cost_or_budget_concern",             label: "Cost or budget concern" },
-      { id: "do_not_know_where_to_start",         label: "We do not know where to start" },
-      { id: "lack_internal_technical_capability", label: "We do not have the internal technical capability" },
-      { id: "team_too_busy_to_implement",         label: "The team is too busy to implement it" },
-      { id: "not_sure_ai_will_work_for_us",       label: "We are not sure AI will actually work for our business" },
-      { id: "security_data_privacy_concern",      label: "Security, data, or privacy concerns" },
-      { id: "do_not_think_we_need_it_yet",        label: "We do not think we need it yet" },
+      { id: "cost_or_budget_concern",              label: "Cost or budget concern" },
+      { id: "do_not_know_where_to_start",          label: "We do not know where to start" },
+      { id: "lack_internal_technical_capability",  label: "We do not have the internal technical capability" },
+      { id: "team_too_busy_to_implement",          label: "The team is too busy to implement it" },
+      { id: "not_sure_ai_will_work_for_us",        label: "We are not sure AI will actually work for our business" },
+      { id: "security_data_privacy_concern",       label: "Security, data, or privacy concerns" },
+      { id: "do_not_think_we_need_it_yet",         label: "We do not think we need it yet" },
     ],
   },
 
@@ -209,7 +215,7 @@ export const QUESTIONS: Question[] = [
     track: "ai_automation",
     order: 9,
     type: "single_select",
-    prompt: "Did you know Singapore SMEs can access up to 70%–80% effective cost support for qualified AI deployments?",
+    prompt: "Did you know Singapore SMEs may be able to access cost support for qualified AI deployments?",
     helper: "Support depends on company profile, project scope, qualifying costs, scheme availability, approval, and tax position. It may include grants, consulting support, cloud support, and tax deductions.",
     required: true,
     options: [
@@ -221,7 +227,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
 
-  // Q9. AI goal
+  // Q9. AI goal — 6-option canonical set (master section 4.10)
   {
     id: "ai_goal",
     track: "ai_automation",
@@ -230,14 +236,12 @@ export const QUESTIONS: Question[] = [
     prompt: "What do you hope to achieve with AI?",
     required: true,
     options: [
-      { id: "reduce_manual_admin_work",              label: "Reduce manual admin work" },
-      { id: "respond_to_customers_faster",           label: "Respond to customers faster" },
-      { id: "improve_sales_followup_conversion",     label: "Improve sales follow-up and conversion" },
-      { id: "improve_reporting_visibility_decisions", label: "Improve reporting, visibility, and management decisions" },
-      { id: "reduce_cost_without_hiring_more",       label: "Reduce cost without hiring more people" },
-      { id: "make_team_more_productive",             label: "Make the team more productive" },
-      { id: "build_scalable_operating_system",       label: "Build a more scalable operating system" },
-      { id: "not_sure_yet",                          label: "I am not sure yet" },
+      { id: "reduce_manual_work",          label: "Reduce manual work and repetitive admin" },
+      { id: "improve_response_time",       label: "Improve response time for customers, leads, or internal teams" },
+      { id: "make_information_retrievable", label: "Make information easier to find and reuse" },
+      { id: "automate_finance_backoffice", label: "Automate finance, reporting, invoicing, or back-office workflows" },
+      { id: "build_scalable_operating_system", label: "Build a scalable AI-enabled operating system" },
+      { id: "exploring_not_sure",          label: "We are exploring and not sure yet" },
     ],
   },
 
@@ -264,7 +268,7 @@ export const QUESTIONS: Question[] = [
     track: "ai_automation",
     order: 12,
     type: "single_select",
-    prompt: "How urgent is this problem?",
+    prompt: "How urgent is this for you right now?",
     required: true,
     options: [
       { id: "need_to_fix_immediately", label: "We need to fix this immediately" },

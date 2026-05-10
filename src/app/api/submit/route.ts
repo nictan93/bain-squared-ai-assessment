@@ -42,6 +42,7 @@ export async function POST(req: NextRequest) {
       result_page_booking_policy: fullResult.resultPageBookingPolicy,
 
       // Signal groups
+      branch: fullResult.branch,
       company_fit_group: fullResult.companyFitGroup,
       business_type_group: fullResult.businessTypeGroup,
       operational_friction_group: fullResult.operationalFrictionGroup,
@@ -50,7 +51,7 @@ export async function POST(req: NextRequest) {
       ai_opportunity_score: fullResult.aiOpportunityScore,
       readiness_group: fullResult.readinessGroup,
       readiness_score: fullResult.readinessScore,
-      use_case_group: fullResult.useCaseGroup,
+      urgency_group: fullResult.urgencyGroup,
       cost_objection_flag: fullResult.costObjectionFlag,
       grant_interest_group: fullResult.grantInterestGroup,
       competitive_advantage_group: fullResult.competitiveAdvantageGroup,
@@ -83,6 +84,7 @@ export async function POST(req: NextRequest) {
       lead_temperature: fullResult.leadTemperature,
       lead_score: fullResult.leadScore,
       report_key: fullResult.reportKey,
+      branch: fullResult.branch,
       crm_tags: fullResult.crmTags,
     });
 
