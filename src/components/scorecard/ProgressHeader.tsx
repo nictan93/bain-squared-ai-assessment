@@ -1,4 +1,5 @@
 import { Progress } from "@/components/ui/Progress";
+import { Bracket } from "@/components/ui/Bracket";
 
 interface ProgressHeaderProps {
   current: number;
@@ -11,8 +12,8 @@ export function ProgressHeader({ current, total }: ProgressHeaderProps) {
   return (
     <div className="w-full space-y-3">
       <div className="flex items-center justify-between">
-        <span className="text-xs font-sans text-text-secondary">
-          [AI Automation Assessment]
+        <span className="text-xs font-sans">
+          <Bracket className="text-xs">AI Automation Assessment</Bracket>
         </span>
         <span className="text-xs font-sans text-text-secondary">
           {current} / {total}
