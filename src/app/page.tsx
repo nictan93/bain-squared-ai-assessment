@@ -49,17 +49,18 @@ export default function LandingPage() {
           <div className="px-8 sm:px-16 md:px-24 pt-16 pb-16 flex flex-col items-start sm:items-center text-left sm:text-center min-h-[560px]">
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-sans font-bold text-text-primary leading-[1.05] tracking-[-0.03em] mb-6">
-              {/* Line break after "work," per spec layout instruction */}
-              Your business runs on manual work,{" "}
+              Your business runs on{" "}
+              <span className="text-state-warning">[manual]</span>{" "}
+              work,
               <br className="hidden sm:inline" />
-              are you ready to change that?
+              {" "}are you ready to change that?
             </h1>
 
             <p className="text-base sm:text-lg text-text-secondary mb-4 leading-relaxed max-w-2xl">
-              {/* Line break after "efficiency." per spec layout instruction */}
-              Most businesses know AI can reduce manual work and improve efficiency.{" "}
+              {/* Line break after "business." per spec layout instruction */}
+              Most businesses know AI can reduce manual work and improve efficiency but don&apos;t know how to implement AI in business.{" "}
               <br className="hidden sm:inline" />
-              The question is how to ensure your business is ready to adopt AI. Qualified Singapore SMEs may be able to access up to 80% government co-funding for qualified AI deployments.
+              Qualified Singapore SMEs may be able to access up to 80% government co-funding for qualified AI deployments.
             </p>
 
             <p className="text-base sm:text-lg text-text-secondary mb-10 leading-relaxed max-w-2xl">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect, useRef } from "react";
+import { useState, useCallback, useEffect, useMemo, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/Button";
@@ -34,11 +34,13 @@ export default function ScorecardPage() {
   const router = useRouter();
   const [state, setState] = useState<AssessmentState>(INITIAL_STATE);
   const [direction, setDirection] = useState<1 | -1>(1);
+  const [focusedOptionId, setFocusedOptionId] = useState<string | null>(null);
 
   const handlingPopState = useRef(false);
   const historyLengthRef = useRef(state.history.length);
   const historyRef = useRef(state.history);
   useEffect(() => { historyRef.current = state.history; }, [state.history]);
+  useEffect(() => { setFocusedOptionId(null); }, [state.currentQuestionId]);
 
   // ── Browser history integration ─────────────────────────────────────────
 
@@ -95,6 +97,11 @@ export default function ScorecardPage() {
       ? ((state.answers[currentQuestion.id] as string[] | undefined) ?? []).length > 0
       : Boolean(state.answers[currentQuestion.id]));
 
+  const currentPopupText = useMemo(() => {
+    if (!currentQuestion || !focusedOptionId) return null;
+    return currentQuestion.options?.find((o) => o.id === focusedOptionId)?.helper ?? null;
+  }, [currentQuestion, focusedOptionId]);
+
   const progress = currentQuestion
     ? getQuestionProgress(currentQuestion.id, state.answers)
     : { current: 0, total: 0 };
@@ -106,12 +113,13 @@ export default function ScorecardPage() {
   // ── Handlers ─────────────────────────────────────────────────────────────
 
   const handleChange = useCallback(
-    (value: string | string[]) => {
+    (value: string | string[], justToggled?: string) => {
       if (!currentQuestion) return;
       setState((s) => ({
         ...s,
         answers: { ...s.answers, [currentQuestion.id]: value },
       }));
+      if (justToggled) setFocusedOptionId(justToggled);
     },
     [currentQuestion]
   );
@@ -182,7 +190,7 @@ export default function ScorecardPage() {
       </header>
 
       <main className="flex-1 flex items-start justify-center px-6 py-12">
-        <div className="max-w-2xl w-full">
+        <div className="max-w-2xl w-full space-y-4">
           <AnimatePresence mode="wait" initial={false}>
             {currentQuestion && (
               <motion.div
@@ -197,6 +205,23 @@ export default function ScorecardPage() {
                   value={currentValue}
                   onChange={handleChange}
                 />
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          <AnimatePresence mode="wait">
+            {currentPopupText && (
+              <motion.div
+                key={currentPopupText}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -4 }}
+                transition={{ duration: 0.22, ease: [0.2, 0, 0, 1] }}
+                className="rounded-xl border border-brand-primary/20 bg-brand-primary-soft px-5 py-4"
+              >
+                <p className="text-sm text-text-secondary leading-relaxed">
+                  {currentPopupText}
+                </p>
               </motion.div>
             )}
           </AnimatePresence>

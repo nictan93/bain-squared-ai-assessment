@@ -1,8 +1,8 @@
 export const LANDING_COPY = {
   headline: "Your business runs on manual work, are you ready to change that?",
-  // subheadline1 split: line break after "efficiency." on desktop
+  // subheadline1 split: line break after "business." on desktop
   subheadline1:
-    "Most businesses know AI can reduce manual work and improve efficiency. The question is how to ensure your business is ready to adopt AI. Qualified Singapore SMEs may be able to access up to 80% government co-funding for qualified AI deployments.",
+    "Most businesses know AI can reduce manual work and improve efficiency but don't know how to implement AI in business. Qualified Singapore SMEs may be able to access up to 80% government co-funding for qualified AI deployments.",
   // subheadline2 split: line break after "AI," on desktop
   subheadline2:
     "Take the assessment to find out whether your business is ready to deploy AI, automate workflows and increase operational efficiencies.",
