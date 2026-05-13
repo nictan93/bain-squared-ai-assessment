@@ -56,18 +56,16 @@ export default function LandingPage() {
               {" "}are you ready to change that?
             </h1>
 
-            <p className="text-base sm:text-lg text-text-secondary mb-4 leading-relaxed max-w-2xl">
-              {/* Line break after "business." per spec layout instruction */}
-              Most businesses know AI can reduce manual work and improve efficiency but don&apos;t know how to implement AI in business.{" "}
+            <p className="text-base sm:text-lg text-text-secondary mb-4 leading-relaxed">
+              {LANDING_COPY.subheadline1a}
               <br className="hidden sm:inline" />
-              Qualified Singapore SMEs may be able to access up to 80% government co-funding for qualified AI deployments.
+              {" "}{LANDING_COPY.subheadline1b}
             </p>
 
-            <p className="text-base sm:text-lg text-text-secondary mb-10 leading-relaxed max-w-2xl">
-              {/* Line break after "AI," per spec layout instruction */}
-              Take the assessment to find out whether your business is ready to deploy AI,{" "}
+            <p className="text-base sm:text-lg text-text-secondary mb-10 leading-relaxed">
+              {LANDING_COPY.subheadline2a}
               <br className="hidden sm:inline" />
-              automate workflows and increase operational efficiencies.
+              {" "}{LANDING_COPY.subheadline2b}
             </p>
 
             <div className="mt-auto flex flex-col items-start sm:items-center">
@@ -77,7 +75,7 @@ export default function LandingPage() {
                 </Button>
               </Link>
 
-              <p className="text-sm text-text-tertiary mt-4 text-center">
+              <p className="text-sm text-text-tertiary mt-4 text-center whitespace-pre-line">
                 {LANDING_COPY.disclaimer}
               </p>
             </div>

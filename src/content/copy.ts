@@ -1,13 +1,17 @@
 export const LANDING_COPY = {
   headline: "Your business runs on manual work, are you ready to change that?",
-  // subheadline1 split: line break after "business." on desktop
-  subheadline1:
-    "Most businesses know AI can reduce manual work and improve efficiency but don't know how to implement AI in business. Qualified Singapore SMEs may be able to access up to 80% government co-funding for qualified AI deployments.",
-  // subheadline2 split: line break after "AI," on desktop
-  subheadline2:
-    "Take the assessment to find out whether your business is ready to deploy AI, automate workflows and increase operational efficiencies.",
+  // subheadline1 split after "business." on desktop (sm+)
+  subheadline1a:
+    "Most businesses know AI can reduce manual work and improve efficiency but don't know how to implement AI in business.",
+  subheadline1b:
+    "Qualified Singapore SMEs may be able to access up to 80% government co-funding for qualified AI deployments.",
+  // subheadline2 split after "AI," on desktop (sm+)
+  subheadline2a:
+    "Take the assessment to find out whether your business is ready to deploy AI,",
+  subheadline2b:
+    "automate workflows and increase operational efficiencies.",
   ctaLabel: "Start the assessment",
-  disclaimer: "No credit card. No login. Takes under 3 minutes.",
+  disclaimer: "No credit card. No login. Takes under 2 minutes.\nReceive a personalised report based on your answers.",
   trustBar: [
     {
       heading: "See where your team is losing time.",
