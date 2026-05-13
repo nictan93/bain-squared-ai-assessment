@@ -37,7 +37,7 @@ export interface AiOutcome {
 const RP01: AiOutcome = {
   resultPageVariant: "RP01",
   headline: "Your business may be ready to adopt Agentic AI automation.",
-  badge: "Opportunistic",
+  badge: "High Urgency",
   intro:
     "Your answers suggest that the issue is not just one slow task or one overloaded person. The business appears to have broader operational friction across follow-ups, coordination, information flow, reporting, or repeated manual work.\n\nThis does not mean the team is doing something wrong. It usually means the business has grown faster than the workflow has been redesigned.",
   calloutTitle: "The opportunity is big.",
@@ -56,8 +56,8 @@ const RP01: AiOutcome = {
 
 const RP02: AiOutcome = {
   resultPageVariant: "RP02",
-  headline: "Your business may benefit from an AI as it grows.",
-  badge: "High opportunity",
+  headline: "Your business may benefit from an AI.",
+  badge: "Good Opportunity",
   intro:
     "Your answers suggest there are early signs of operational friction across more than one workflow. Things may still be moving today, but the manual coordination is starting to add up.\n\nThis is a useful stage to understand how AI automation could support how work moves, how information is captured, and how much human chasing is needed to keep the business on track.",
   calloutTitle: "Build before it's too late.",
@@ -77,7 +77,7 @@ const RP02: AiOutcome = {
 const RP03: AiOutcome = {
   resultPageVariant: "RP03",
   headline: "Your current workflows are ready for AI automation.",
-  badge: "Urgent review",
+  badge: "High Urgency",
   intro:
     "Your answers suggest that customer replies, lead qualification, sales follow-up, proposals, or CRM updates may be taking more manual effort than they should.\n\nThis is one of the clearest areas where AI automation can create visible business impact. The goal is not to replace your sales or customer support team. It is to make sure leads are followed up, customer questions are answered, and proposals are produced faster than the team can manage on its own.",
   calloutTitle: "Slow follow-up quietly costs revenue.",
@@ -97,7 +97,7 @@ const RP03: AiOutcome = {
 const RP04: AiOutcome = {
   resultPageVariant: "RP04",
   headline: "Your customer and revenue workflows may benefit from AI automation as they scale.",
-  badge: "High opportunity",
+  badge: "Good Opportunity",
   intro:
     "Your answers suggest that customer replies, sales follow-up, or proposal work is starting to take more manual effort than it should. Things may still be working, but the workload is creeping up.\n\nThis is the right stage to understand which parts of the customer and revenue workflow could be automated, and which parts are better handled by people.",
   calloutTitle: "Free up your team's time.",
@@ -117,7 +117,7 @@ const RP04: AiOutcome = {
 const RP05: AiOutcome = {
   resultPageVariant: "RP05",
   headline: "Your operations team does too much manual work.",
-  badge: "Urgent review",
+  badge: "Urgent Review",
   intro:
     "Your answers suggest that finance, reporting, invoicing, document review, trackers, or recurring back-office workflows may be creating a lot of manual load on the team.\n\nThis is exactly where AI automation tends to deliver fast, measurable wins. It is also where weak processes are most likely to delay management decisions and quietly add cost.",
   calloutTitle: "Manual back-office work delays good judgement.",
@@ -137,7 +137,7 @@ const RP05: AiOutcome = {
 const RP06: AiOutcome = {
   resultPageVariant: "RP06",
   headline: "Your operations may benefit from AI automation as it grows.",
-  badge: "High Opportunity",
+  badge: "Good Opportunity",
   intro:
     "Your answers suggest that finance, reporting, invoicing, document review, or recurring back-office work is starting to take more manual effort than it should. The team can probably still handle it today, but the workload is creeping up.\n\nThis is the right stage to understand where automation usually creates the most value in finance and back-office workflows, before the manual load starts to delay decisions.",
   calloutTitle: "Manual work has a cost.",
@@ -157,7 +157,7 @@ const RP06: AiOutcome = {
 const RP07: AiOutcome = {
   resultPageVariant: "RP07",
   headline: "Your team may be ready for AI workflow automation.",
-  badge: "Urgent review",
+  badge: "Urgent Review",
   intro:
     "Your answers suggest that internal coordination, approvals, handovers, reminders, admin work, or key-person dependency may be slowing the business down.\n\nThis does not always mean the team is underperforming. More often, it means the workflow is under-designed. Too much context lives in messages, meetings, spreadsheets, or individual memory, and the manual chasing fills the gap.",
   calloutTitle: "The bottleneck is the workflow layer.",
@@ -177,7 +177,7 @@ const RP07: AiOutcome = {
 const RP08: AiOutcome = {
   resultPageVariant: "RP08",
   headline: "Your internal workflows may benefit from AI automation as the team grows.",
-  badge: "High Opportunity",
+  badge: "Good Opportunity",
   intro:
     "Your answers suggest that internal coordination, approvals, handovers, reminders, or documentation are starting to take more manual effort than they should. Things may still be working today, but the workload is creeping into more of the team's day.\n\nThis is the right stage to understand which internal workflows usually benefit most from automation, and how to introduce it without creating new tools that nobody adopts.",
   calloutTitle: "Better workflows usually beat more headcount.",
@@ -197,7 +197,7 @@ const RP08: AiOutcome = {
 const RP09: AiOutcome = {
   resultPageVariant: "RP09",
   headline: "Your business may be ready for AI with clear next steps.",
-  badge: "High Opportunity",
+  badge: "High Urgency",
   intro:
     "Your answers suggest that the main issue is not whether AI could help. The issue is where to start, how to design the workflow properly, how to integrate it into the business, and how to make sure the system actually works after launch.\n\nThis is where many AI projects quietly fail. Companies test tools, run pilots, or ask staff to use ChatGPT, but the workflow itself does not change. The business still depends on people manually chasing, checking, updating, and remembering what happens next.",
   calloutTitle: "Capabilities are built through workflows.",
@@ -217,7 +217,7 @@ const RP09: AiOutcome = {
 const RP10: AiOutcome = {
   resultPageVariant: "RP10",
   headline: "Your business may be exploring AI without clear goals.",
-  badge: "Urgent review",
+  badge: "Urgent Review",
   intro:
     "Your answers suggest that you can see how AI could help, but the harder question is where to start. Cost, capability, time, or simply not knowing the right first move can make it easier to delay than to act.\n\nThis is normal at this stage. The most useful next step is usually not another tool. It is a clearer view of which workflow would benefit first, what the build and adoption path looks like, and what cost support may apply.",
   calloutTitle: "The first step is choosing the first workflow.",

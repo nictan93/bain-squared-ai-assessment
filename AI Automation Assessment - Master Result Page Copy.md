@@ -343,7 +343,7 @@ Your company may be eligible for funding support
 Body:
 
 ```text
-Qualified Singapore SMEs may be able to access up to 70 percent government co-funding for qualified AI deployments through schemes such as EDG, ECI, EIS, and PSG. Depending on eligibility, a S$50,000 engagement can net out to roughly S$10,000 to S$15,000 after grants and applicable tax deductions. Support depends on company profile, project scope, qualifying costs, scheme availability, approval, and tax position.
+Qualified Singapore SMEs may be able to access up to 80 percent government co-funding for qualified AI deployments through schemes such as EDG, ECI, EIS, and PSG. Depending on eligibility, a S$50,000 engagement can net out to roughly S$10,000 to S$15,000 after grants and applicable tax deductions. Support depends on company profile, project scope, qualifying costs, scheme availability, approval, and tax position.
 
 The first step is to map the workflow, estimate ROI, and check which support options may apply.
 ```
@@ -416,7 +416,7 @@ Title:
 Your business may be ready to adopt Agentic AI automation.
 
 Badge:
-Opportunistic 
+High Urgency 
 
 Intro:
 Your answers suggest that the issue is not just one slow task or one overloaded person. The business appears to have broader operational friction across follow-ups, coordination, information flow, reporting, or repeated manual work.
@@ -495,10 +495,10 @@ Hero label:
 YOUR RESULT
 
 Title:
-Your business may benefit from an AI as it grows.
+Your business may benefit from an AI.
 
 Badge:
-High opportunity
+Good Opportunity
 
 Intro:
 Your answers suggest there are early signs of operational friction across more than one workflow. Things may still be moving today, but the manual coordination is starting to add up.
@@ -577,7 +577,7 @@ Title:
 Your current workflows is ready for AI automation.
 
 Badge:
-Urgent review
+High Urgency 
 
 Intro:
 Your answers suggest that customer replies, lead qualification, sales follow-up, proposals, or CRM updates may be taking more manual effort than they should.
@@ -658,7 +658,7 @@ Title:
 Your customer and revenue workflows may benefit from AI automation as they scale.
 
 Badge:
-High opportunity
+Good Opportunity
 
 Intro:
 Your answers suggest that customer replies, sales follow-up, or proposal work is starting to take more manual effort than it should. Things may still be working, but the workload is creeping up.
@@ -737,7 +737,7 @@ Title:
 Your operations team does too much manual work. 
 
 Badge:
-Urgent review
+Urgent Review
 
 Intro:
 Your answers suggest that finance, reporting, invoicing, document review, trackers, or recurring back-office workflows may be creating a lot of manual load on the team.
@@ -818,7 +818,7 @@ Title:
 Your operations may benefit from AI automation as it grows.
 
 Badge:
-High Opportunity
+Good Opportunity
 
 Intro:
 Your answers suggest that finance, reporting, invoicing, document review, or recurring back-office work is starting to take more manual effort than it should. The team can probably still handle it today, but the workload is creeping up.
@@ -897,7 +897,7 @@ Title:
 Your team may be ready for AI workflow automation.
 
 Badge:
-Urgent review
+Urgent Review
 
 Intro:
 Your answers suggest that internal coordination, approvals, handovers, reminders, admin work, or key-person dependency may be slowing the business down.
@@ -978,7 +978,7 @@ Title:
 Your internal workflows may benefit from AI automation as the team grows.
 
 Badge:
-High Opportunity
+Good Opportunity
 
 Intro:
 Your answers suggest that internal coordination, approvals, handovers, reminders, or documentation are starting to take more manual effort than they should. Things may still be working today, but the workload is creeping into more of the team's day.
@@ -1057,7 +1057,7 @@ Title:
 Your business may be ready for AI with clear next steps.
 
 Badge:
-High Opportunity
+High Urgency 
 
 Intro:
 Your answers suggest that the main issue is not whether AI could help. The issue is where to start, how to design the workflow properly, how to integrate it into the business, and how to make sure the system actually works after launch.
@@ -1138,7 +1138,7 @@ Title:
 Your business may be exploring AI without clear goals.
 
 Badge:
-Urgent review
+Urgent Review
 
 Intro:
 Your answers suggest that you can see how AI could help, but the harder question is where to start. Cost, capability, time, or simply not knowing the right first move can make it easier to delay than to act.
@@ -1217,7 +1217,7 @@ Title:
 Your business should understand what AI automation looks like before deciding what to do.
 
 Badge:
-Strategic preparation
+Strategic Preparation
 
 Intro:
 Your answers suggest that AI automation may not be an urgent business need today, but the topic is worth understanding before competitors, customers, or operational complexity force the conversation.
@@ -1500,7 +1500,7 @@ Before deploying the result page copy, confirm every item below.
 [ ] failure_kicker text matches the source-cited MIT NANDA stat.
 [ ] timing_kicker text matches the source-cited Deloitte Singapore stat.
 [ ] funding_kicker text includes scheme names with full qualification language.
-[ ] funding_kicker is shown only when cost_objection_flag is true or the grant_interest_group signal is present.
+[ ] funding_kicker is shown only when cost_objection_flag is true (which includes cashflow concerns) or the grant_interest_group signal is present.
 [ ] The per-variant After submit copy is preferred over the universal fallback.
 ```
 

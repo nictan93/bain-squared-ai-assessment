@@ -53,6 +53,8 @@ export async function POST(req: NextRequest) {
       readiness_score: fullResult.readinessScore,
       urgency_group: fullResult.urgencyGroup,
       cost_objection_flag: fullResult.costObjectionFlag,
+      upfront_cashflow_concern_flag: fullResult.upfrontCashflowConcernFlag,
+      support_exploration_flag: fullResult.supportExplorationFlag,
       grant_interest_group: fullResult.grantInterestGroup,
       competitive_advantage_group: fullResult.competitiveAdvantageGroup,
 

@@ -101,8 +101,15 @@ export function Question({ question, value, onChange }: QuestionProps) {
                       </svg>
                     )}
                   </span>
-                  <span className="text-base text-text-primary leading-relaxed">
-                    {option.label}
+                  <span className="flex flex-col gap-1">
+                    <span className="text-base text-text-primary leading-relaxed">
+                      {option.label}
+                    </span>
+                    {option.helper && (
+                      <span className="text-xs text-text-tertiary leading-relaxed">
+                        {option.helper}
+                      </span>
+                    )}
                   </span>
                 </div>
               </button>
@@ -156,8 +163,15 @@ export function Question({ question, value, onChange }: QuestionProps) {
                   <span className="block h-1.5 w-1.5 rounded-full bg-text-inverse" />
                 </RadioGroup.Indicator>
               </span>
-              <span className="text-base text-text-primary leading-relaxed">
-                {option.label}
+              <span className="flex flex-col gap-1">
+                <span className="text-base text-text-primary leading-relaxed">
+                  {option.label}
+                </span>
+                {option.helper && (
+                  <span className="text-xs text-text-tertiary leading-relaxed">
+                    {option.helper}
+                  </span>
+                )}
               </span>
             </div>
           </RadioGroup.Item>

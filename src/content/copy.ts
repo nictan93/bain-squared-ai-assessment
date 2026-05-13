@@ -1,9 +1,11 @@
 export const LANDING_COPY = {
   headline: "Your business runs on manual work, are you ready to change that?",
+  // subheadline1 split: line break after "efficiency." on desktop
   subheadline1:
-    "Find out whether your business is ready to deploy AI to reduce manual work, automate workflows, and create operating efficiency.",
+    "Most businesses know AI can reduce manual work and improve efficiency. The question is how to ensure your business is ready to adopt AI. Qualified Singapore SMEs may be able to access up to 80% government co-funding for qualified AI deployments.",
+  // subheadline2 split: line break after "AI," on desktop
   subheadline2:
-    "Qualified Singapore SMEs may be able to access up to 70 percent government co-funding for qualified AI deployments.",
+    "Take the assessment to find out whether your business is ready to deploy AI, automate workflows and increase operational efficiencies.",
   ctaLabel: "Start the assessment",
   disclaimer: "No credit card. No login. Takes under 3 minutes.",
   trustBar: [
@@ -25,7 +27,7 @@ export const LANDING_COPY = {
 export const RESULT_COPY = {
   yourResultLabel: "YOUR RESULT",
 
-  // Form field labels (master section 4)
+  // Form field labels (master spec section 4.13)
   emailLabel: "Business email *",
   emailPlaceholder: "your@company.com",
   emailHelperText:
@@ -61,6 +63,6 @@ export const KICKER_COPY = {
   },
   funding_kicker: {
     title: "Your company may be eligible for funding support",
-    body: "Qualified Singapore SMEs may be able to access up to 70 percent government co-funding for qualified AI deployments through schemes such as EDG, ECI, EIS, and PSG. Depending on eligibility, a S$50,000 engagement can net out to roughly S$10,000 to S$15,000 after grants and applicable tax deductions. Support depends on company profile, project scope, qualifying costs, scheme availability, approval, and tax position.\n\nThe first step is to map the workflow, estimate ROI, and check which support options may apply.",
+    body: "Qualified Singapore SMEs may be able to access up to 80 percent government co-funding for qualified AI deployments through schemes such as EDG, ECI, EIS, and PSG. Depending on eligibility, a S$50,000 engagement can net out to roughly S$10,000 to S$15,000 after grants and applicable tax deductions. Support depends on company profile, project scope, qualifying costs, scheme availability, approval, and tax position.\n\nThe first step is to map the workflow, estimate ROI, and check which support options may apply.",
   },
 } as const;

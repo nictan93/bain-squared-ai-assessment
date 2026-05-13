@@ -93,17 +93,22 @@ Grant awareness must never create a Hot lead by itself. It can only upgrade temp
 ## Assessment title
 
 ```
-Your business runs on manual work, are you ready to change that?
+Your business runs on [manual] work, are you ready to change that?
+
+**Layout instruction:**  
+Keep this title on two lines. Insert the line break immediately after “work,”.
 ```
 
 ## Subtitle
 
 ```
-Find out whether your business is ready to deploy AI to reduce manual work, 
-automate workflows, and create operating efficiency.
+Most businesses know AI can reduce manual work and improve efficiency. The question is how to ensure your business is ready to adopt AI. Qualified Singapore SMEs may be able to access up to 80% government co-funding for qualified AI deployments.
 
-Qualified Singapore SMEs may be able to access up to 70 percent 
-government co-funding for qualified AI deployments.
+Take the assessment to find out whether your business is ready to deploy AI, automate workflows and increase operational efficiencies.
+
+
+**Layout instruction:**  
+Keep this subtitle on two lines. Insert the line break immediately after “efficiency.” and "AI,".
 ```
 
 # Assessment Intro Page Trust Bar
@@ -254,12 +259,13 @@ What stage is your business at today?
 
 | Display option | Helper text | Answer key |
 | --- | --- | --- |
-| Idea stage or pre-revenue | Still building the product or finding the first customers. | `idea_or_pre_revenue` |
-| Early revenue business | Generating sales, but operations are still mostly manual and founder-led. | `early_revenue_startup` |
-| Funded startup, Seed to Series A | Scaling up quickly with institutional backing. | `funded_startup_seed_to_series_a` |
-| Growing SME | Established business experiencing a period of expansion. | `growth_stage_company` |
-| Established SME | A mature, stable business with predictable operations. | `established_sme` |
-| Multi-entity or regional business | Complex operations spanning multiple jurisdictions or business units. | `multi_entity_or_regional_business` |
+| Idea stage or pre-revenue         | That is completely normal. You may still be shaping the offer, testing demand, or working toward your first paying customers.           | `idea_or_pre_revenue`               |
+| Early revenue business            | You have started proving demand, but much of the business may still rely on founder effort, manual work, and informal processes.        | `early_revenue_startup`             |
+| Funded startup, Seed to Series A  | The business is moving faster, with more pressure to scale operations, improve execution, and show progress clearly.                    | `funded_startup_seed_to_series_a`   |
+| Growing SME                       | You have an operating business with increasing activity, and growth may be starting to expose process gaps or capacity strain.          | `growth_stage_company`              |
+| Established SME                   | The business is stable and proven, but there may still be opportunities to reduce manual work and improve operating efficiency.         | `established_sme`                   |
+| Multi-entity or regional business | With more business units, markets, or entities involved, coordination and workflow complexity usually become harder to manage manually. | `multi_entity_or_regional_business` |
+
 
 Purpose:
 
@@ -283,12 +289,13 @@ How many people are currently in the company?
 
 | Display option | Helper text | Answer key |
 | --- | --- | --- |
-| 1 to 4 | A very small, tight-knit team. | `1_to_4` |
-| 5 to 10 | A core team handling multiple functions. | `5_to_10` |
-| 11 to 20 | Growing team starting to need more formal processes. | `11_to_20` |
-| 21 to 50 | Established organization with distinct departments. | `21_to_50` |
-| 51 to 200 | Mid-sized enterprise with significant operational complexity. | `51_to_200` |
-| More than 200 | Large enterprise scale. | `more_than_200` |
+| 1 to 4         | A very lean team where most people are likely wearing multiple hats and processes are still highly informal.                                           | `1_to_4`        |
+| 5 to 10        | A small core team where repeated tasks, handovers, and day-to-day coordination may be starting to consume more time.                                   | `5_to_10`       |
+| 11 to 20       | The team is growing, and this is often when businesses start needing clearer workflows, better documentation, and less reliance on memory.             | `11_to_20`      |
+| 21 to 50       | At this size, different functions begin to depend on one another more heavily, making workflow efficiency and information flow increasingly important. | `21_to_50`      |
+| 51 to 200      | The business has meaningful operating complexity, where fragmented processes and manual work can create significant drag if left unchecked.            | `51_to_200`     |
+| More than 200  | You are operating at larger scale, where AI opportunities may exist, though the scope and implementation usually require a more tailored approach.     | `more_than_200` |
+
 
 Target rule:
 
@@ -314,14 +321,15 @@ What type of business are you?
 
 | Display option | Helper text | Answer key |
 | --- | --- | --- |
-| Accounting, finance, tax, audit, or bookkeeping firm | Professional financial services. | `accounting_finance_firm` |
-| Professional services, consulting, agency, or advisory firm | Knowledge work and client services. | `professional_services_firm` |
-| Healthcare, education, training, or enrichment business | `healthcare_education_training` |  |
-| Retail, e-commerce, distribution, or trading business | Moving physical or digital goods. | `retail_ecommerce_distribution` |
-| Manufacturing, logistics, operations, or field service business | Heavy operational and physical workflows. | `manufacturing_logistics_operations` |
-| Technology, SaaS, or digital product company | Building and selling software or digital platforms. | `technology_saas_digital` |
-| Content, marketing, media, or creative business | Production and distribution of creative assets. | `content_marketing_media` |
-| Other SME or service business | Any other service-oriented business model. | `other_sme_service_business` |
+| Accounting, finance, tax, audit, or bookkeeping firm            | These businesses often handle large volumes of documents, client requests, repetitive reviews, and finance-related workflows that may be highly automatable. | `accounting_finance_firm`            |
+| Professional services, consulting, agency, or advisory firm     | Client delivery, proposals, research, reporting, and follow-ups can create a surprising amount of repeatable coordination work.                              | `professional_services_firm`         |
+| Healthcare, education, training, or enrichment business         | These businesses often manage scheduling, inquiries, follow-ups, records, and recurring admin work across customers, students, or patients.                  | `healthcare_education_training`      |
+| Retail, e-commerce, distribution, or trading business           | Product, order, customer, inventory, supplier, and sales workflows can become time-intensive as transaction volume rises.                                    | `retail_ecommerce_distribution`      |
+| Manufacturing, logistics, operations, or field service business | Operational businesses often rely on approvals, dispatching, documentation, reporting, and handovers that can become bottlenecks at scale.                   | `manufacturing_logistics_operations` |
+| Technology, SaaS, or digital product company                    | Even digital-first companies often carry manual work across customer support, sales ops, product feedback, reporting, and internal coordination.             | `technology_saas_digital`            |
+| Content, marketing, media, or creative business                 | Research, production workflows, campaign planning, approvals, revisions, and publishing routines can create repetitive workload behind the scenes.           | `content_marketing_media`            |
+| Other SME or service business                                   | Many service businesses have repeatable tasks, information handoffs, and customer-facing workflows that can be improved with the right automation.           | `other_sme_service_business`         |
+
 
 Purpose:
 
@@ -352,15 +360,16 @@ Where does your team spend the most time?
 
 | Display option | Helper text | Answer key |
 | --- | --- | --- |
-| Admin, data entry, or document preparation | Heavy manual copy-pasting and paperwork. | `admin_data_entry_documents` |
-| Customer replies, support requests, or follow-ups | Constantly managing the inbox and customer queries. | `customer_replies_support_followups` |
-| Sales follow-ups, proposals, or CRM updates | Chasing leads and keeping the sales pipeline accurate. | `sales_followups_proposals_crm` |
-| Finance, reporting, invoicing, or internal tracking | Managing the numbers, billing, and back-office records. | `finance_reporting_invoicing_tracking` |
-| Internal coordination, handovers, reminders, or approvals | Chasing team members to keep projects moving. | `internal_coordination_handover_approvals` |
-| Meeting notes, summaries, documentation, or knowledge capture | Trying to record and organize what was discussed. | `meeting_notes_summaries_documentation` |
-| Research, content, marketing, or campaign work | Gathering information and producing marketing materials. | `research_content_marketing_campaigns` |
-| I am not sure, but the team always feels busy | You can feel the friction, but cannot pinpoint the exact bottleneck. | `not_sure_team_feels_busy` |
-| None of the above | Our workflows are outside these common categories. | `none_of_the_above` |
+| Admin, data entry, or document preparation                    | Repetitive copy-pasting, form filling, document formatting, and manual admin can quietly consume a large amount of team capacity.                     | `admin_data_entry_documents`               |
+| Customer replies, support requests, or follow-ups             | When similar questions and updates keep coming in, response quality and speed can start depending too much on team bandwidth.                         | `customer_replies_support_followups`       |
+| Sales follow-ups, proposals, or CRM updates                   | Valuable sales time may be getting pulled into chasing leads, preparing repetitive materials, or keeping pipeline records current.                    | `sales_followups_proposals_crm`            |
+| Finance, reporting, invoicing, or internal tracking           | These tasks are essential, but if too much of them are handled manually, the business may lose time and accuracy.                                     | `finance_reporting_invoicing_tracking`     |
+| Internal coordination, handovers, reminders, or approvals     | Work may be moving, but only because someone is constantly following up, nudging, or keeping track of what should happen next.                        | `internal_coordination_handover_approvals` |
+| Meeting notes, summaries, documentation, or knowledge capture | Important conversations may be happening, but the team still has to spend too much effort turning them into usable next steps or reference materials. | `meeting_notes_summaries_documentation`    |
+| Research, content, marketing, or campaign work                | The work is valuable, but parts of the process may involve repeated searching, drafting, repurposing, or coordination that can be streamlined.        | `research_content_marketing_campaigns`     |
+| I am not sure, but the team always feels busy                 | That is often a useful signal on its own. The friction may be spread across several workflows rather than sitting in one obvious place.               | `not_sure_team_feels_busy`                 |
+| None of the above                                             | That is fine. Your biggest time drain may sit in a more specific or less common workflow that needs a closer look.                                    | `none_of_the_above`                        |
+
 
 ### Validation rules
 
@@ -407,11 +416,12 @@ What happens when a key person is busy or on leave?
 
 | Display option | Helper text | Answer key | Friction signal |
 | --- | --- | --- | --- |
-| Work slows down immediately | The process is entirely dependent on that specific person's knowledge. | `work_slows_down_immediately` | strong |
-| Decisions get delayed | Approvals and next steps halt until they return. | `decisions_get_delayed` | strong |
-| Customers, leads, or internal teams wait longer than they should | The delay directly impacts the customer experience or sales pipeline. | `customers_or_internal_teams_wait` | strong |
-| Someone else can cover, but context is often missing | The work continues, but inefficiently and with a higher risk of errors. | `someone_can_cover_but_context_missing` | moderate |
-| The business continues smoothly because processes are clear | Strong systems are in place to handle absences. | `business_continues_smoothly` | low |
+| Work slows down immediately                                      | That usually means too much process knowledge or execution sits with one person, making the business harder to scale reliably.   | `work_slows_down_immediately`           | strong          |
+| Decisions get delayed                                            | When approvals or next steps depend on one individual, even routine work can stall unnecessarily.                                | `decisions_get_delayed`                 | strong          |
+| Customers, leads, or internal teams wait longer than they should | This suggests the dependency is affecting service levels, response times, or commercial momentum, not just internal convenience. | `customers_or_internal_teams_wait`      | strong          |
+| Someone else can cover, but context is often missing             | The work continues, but gaps in documentation, handover, or system visibility make the process slower and more error-prone.      | `someone_can_cover_but_context_missing` | moderate        |
+| The business continues smoothly because processes are clear      | That is a strong sign of operational maturity. The work is supported by clear systems, documentation, and ownership.             | `business_continues_smoothly`           | low             |
+
 
 Purpose:
 
@@ -435,11 +445,12 @@ Is your important information everywhere, in emails, WhatsApp, spreadsheets, or 
 
 | Display option | Helper text | Answer key | Friction signal |
 | --- | --- | --- | --- |
-| Yes, important information is everywhere | It is a constant struggle to find the right document or context. | `yes_information_is_everywhere` | strong |
-| Somewhat. We can find it, but it takes time | Things are generally saved, but retrieval is slow and manual. | `somewhat_can_find_but_takes_time` | moderate |
-| Most information is documented, but not connected into workflows | We have a wiki or drive, but it is passive and disconnected from daily tasks. | `documented_but_not_connected` | moderate |
-| No, our information is mostly organised and easy to retrieve | We have a strong, disciplined approach to knowledge management. | `mostly_organised_easy_to_retrieve` | low |
-| I am not sure | We have not formally audited how our information flows. | `not_sure` | moderate |
+| Yes, important information is everywhere                         | When context is scattered across tools and people, teams spend too much time searching, confirming, and recreating what already exists. | `yes_information_is_everywhere`     | strong          |
+| Somewhat. We can find it, but it takes time                      | The information exists, but retrieval still depends on manual searching, asking around, or knowing exactly where to look.               | `somewhat_can_find_but_takes_time`  | moderate        |
+| Most information is documented, but not connected into workflows | Documentation is a good start, but if it sits separately from daily work, teams may still struggle to act on it efficiently.            | `documented_but_not_connected`      | moderate        |
+| No, our information is mostly organised and easy to retrieve     | That is a solid foundation. Clear information flow makes automation and scaling much easier.                                            | `mostly_organised_easy_to_retrieve` | low             |
+| I am not sure                                                    | That is understandable. Information problems often stay invisible until the business grows or someone important becomes unavailable.    | `not_sure`                          | moderate        |
+
 
 Purpose:
 
@@ -463,11 +474,12 @@ Which statement best describes your current use of AI?
 
 | Display option | Helper text | Answer key | Readiness signal |
 | --- | --- | --- | --- |
-| We barely use AI | We are at the very beginning of exploring this technology. | `barely_use_ai` | low |
-| Some staff use ChatGPT or similar tools individually | Ad-hoc usage exists, but there is no coordinated company strategy. | `staff_use_chatgpt_individually` | moderate |
-| We use AI tools, but there is no company-wide system | We pay for some AI software, but workflows remain disconnected. | `use_ai_tools_but_no_company_system` | moderate |
-| We have automated some workflows, but they are still basic | We have started building actual automated processes. | `some_workflows_automated_basic` | high |
-| AI is already embedded into core business processes | We operate with a mature, AI-enabled foundation. | `ai_embedded_in_core_processes` | high |
+| We barely use AI                                           | That is completely normal. You may still be observing the space, testing small ideas, or unsure where AI would be genuinely useful.   | `barely_use_ai`                      | low              |
+| Some staff use ChatGPT or similar tools individually       | AI is already entering the business informally, but usage may depend on individual habits rather than a clear company-wide approach.  | `staff_use_chatgpt_individually`     | moderate         |
+| We use AI tools, but there is no company-wide system       | You have started experimenting with AI, though the tools may still sit separately from your workflows, data, and operating processes. | `use_ai_tools_but_no_company_system` | moderate         |
+| We have automated some workflows, but they are still basic | That is a meaningful step forward. You have moved beyond experimentation and started applying automation to real business tasks.      | `some_workflows_automated_basic`     | high             |
+| AI is already embedded into core business processes        | You have a mature starting point. AI is not just a tool on the side, but part of how the business operates day to day.                | `ai_embedded_in_core_processes`      | high             |
+
 
 ### Conditional rule
 
@@ -501,13 +513,14 @@ What is your biggest reason for not using AI?
 
 | Display option | Helper text | Answer key |
 | --- | --- | --- |
-| Cost or budget concern | We are worried about the implementation and running costs. | `cost_or_budget_concern` |
-| We do not know where to start | The options are overwhelming and we lack a clear roadmap. | `do_not_know_where_to_start` |
-| We do not have the internal technical capability | We lack the engineers or operations staff to build and maintain it. | `lack_internal_technical_capability` |
-| The team is too busy to implement it | We are too bogged down in daily work to step back and automate. | `team_too_busy_to_implement` |
-| We are not sure AI will actually work for our business | We are skeptical of the hype vs. reality for our specific industry. | `not_sure_ai_will_work_for_us` |
-| Security, data, or privacy concerns | We handle sensitive information and cannot risk data leaks. | `security_data_privacy_concern` |
-| We do not think we need it yet | Our current manual processes are sufficient for our scale. | `do_not_think_we_need_it_yet` |
+| Cost or budget concern                                 | You may see the potential, but worry that implementation, software, or ongoing support will be too expensive to justify.                     | `cost_or_budget_concern`             |
+| We do not know where to start                          | The opportunity feels broad, but it is not yet clear which workflow to tackle first or what a sensible roadmap should look like.             | `do_not_know_where_to_start`         |
+| We do not have the internal technical capability       | You may lack the in-house people needed to design, deploy, maintain, or troubleshoot AI-enabled workflows.                                   | `lack_internal_technical_capability` |
+| The team is too busy to implement it                   | Ironically, the same manual workload that AI could reduce may also be stopping the team from stepping back to fix it.                        | `team_too_busy_to_implement`         |
+| We are not sure AI will actually work for our business | That is a fair concern. The question is not whether AI is popular, but whether it can solve a real problem in your specific operating model. | `not_sure_ai_will_work_for_us`       |
+| Security, data, or privacy concerns                    | If your business handles sensitive information, it makes sense to be cautious about how AI tools access, process, and store data.            | `security_data_privacy_concern`      |
+| We do not think we need it yet                         | Your current setup may still feel manageable, especially if manual work has not yet become a clear growth or efficiency problem.             | `do_not_think_we_need_it_yet`        |
+
 
 Special rule:
 
@@ -516,10 +529,10 @@ ai_non_adoption_reason = cost_or_budget_concern sets cost_objection_flag = true.
 This triggers funding language on the result page and in the assigned report.
 ```
 
-## 4.9 Q8 - Grant awareness
+## 4.9 Q8 - Funding practicality
 
 ```
-question_key = grant_awareness
+question_key = funding_practicality
 type = single_select
 required = true
 ```
@@ -527,33 +540,44 @@ required = true
 Question text:
 
 ```
-Did you know Singapore SMEs may be able to access cost support for qualified AI deployments?
+Even where AI projects may qualify for cost support, businesses may still need to manage the upfront investment first. Which best describes your situation?
 ```
 
 Required helper text directly below the question:
 
 ```
-Support depends on company profile, project scope, qualifying costs, scheme availability, approval, and tax position. It may include grants, consulting support, cloud support, and tax deductions.
+Support depends on company profile, project scope, qualifying costs, scheme availability, approval, and tax position. Some schemes may operate on a claim or reimbursement basis, so upfront cash flow can still matter.
 ```
 
 | Display option | Helper text | Answer key |
 | --- | --- | --- |
-| Yes | We are familiar with the available government support schemes. | `yes_aware` |
-| No | We were not aware funding might be available. | `no_not_aware` |
-| No, but I am willing to try | We are open to exploring grants if they make the project viable. | `no_but_willing_to_try` |
-| Not relevant to us | We do not qualify or prefer not to use government grants. | `not_relevant` |
-| I am not sure | We need more information on eligibility. | `not_sure` |
+| We are open to AI, but the upfront cost would matter | Support may help, but we would still need the initial investment to feel manageable. | `upfront_cost_matters` |
+| We would be more willing to act if the cost can be staged or structured sensibly | The project may be attractive, but cash flow timing is a major part of the decision. | `need_cost_staged_or_structured` |
+| If support is available, we would be willing to explore it | We are open to assessing qualified schemes if they help make the project more viable. | `open_to_support_if_available` |
+| We can consider AI without relying on grants or support | Funding support is useful, but it is not central to whether we would proceed. | `not_reliant_on_support` |
+| I am not sure how the support or claims process works | We may need a clearer view of eligibility, reimbursement timing, and what the business would still need to fund upfront. | `not_sure_how_support_works` |
+
 
 Purpose:
 
 ```
-Cost objection reducer, grant or support interest signal, and eligibility mapping trigger.
+Cost objection signal, funding practicality, and eligibility mapping trigger.
+```
+
+Suggested routing rules:
+
+```
+If Q8 = upfront_cost_matters OR need_cost_staged_or_structured:
+  set upfront_cashflow_concern_flag = true
+
+If Q8 = open_to_support_if_available OR not_sure_how_support_works:
+  set support_exploration_flag = true
 ```
 
 Critical rule:
 
 ```
-Grant awareness must not create a Hot lead by itself. It can only upgrade temperature when operational pain and urgency already exist.
+Q8 must not create a Hot lead by itself. It may only strengthen conversion messaging when operational pain and action urgency are already present.
 ```
 
 ## 4.10 Q9 - AI goal
@@ -572,12 +596,13 @@ What do you hope to achieve with AI?
 
 | Display option | Helper text | Answer key |
 | --- | --- | --- |
-| Reduce manual work and repetitive admin | The primary goal is saving time and cutting operational drag. | `reduce_manual_work` |
-| Improve response time for customers, leads, or internal teams | The focus is on speed, SLA adherence, and customer experience. | `improve_response_time` |
-| Make information easier to find and reuse | The goal is better knowledge management and eliminating silos. | `make_information_retrievable` |
-| Automate finance, reporting, invoicing, or back-office workflows | Targeting the specific friction in financial operations. | `automate_finance_backoffice` |
-| Build a scalable AI-enabled operating system | A holistic transformation of how the business operates. | `build_scalable_operating_system` |
-| We are exploring and not sure yet | Still figuring out the highest ROI use case. | `exploring_not_sure` |
+| Reduce manual work and repetitive admin                          | The main priority is freeing up team time by reducing repetitive, low-value work that does not need constant human attention.              | `reduce_manual_work`              |
+| Improve response time for customers, leads, or internal teams    | You want the business to respond faster, follow up more consistently, and reduce delays that affect service or conversion.                 | `improve_response_time`           |
+| Make information easier to find and reuse                        | The goal is to stop losing time searching through documents, chats, and staff knowledge, and make useful information easier to act on.     | `make_information_retrievable`    |
+| Automate finance, reporting, invoicing, or back-office workflows | You are looking to reduce friction in recurring operational processes that are often manual, time-sensitive, and easy to bottleneck.       | `automate_finance_backoffice`     |
+| Build a scalable AI-enabled operating system                     | You are thinking beyond isolated tools and want AI to become part of a more efficient, connected way of running the business.              | `build_scalable_operating_system` |
+| We are exploring and not sure yet                                | That is a reasonable starting point. You may know AI could help, but still need clarity on the use case with the strongest business value. | `exploring_not_sure`              |
+
 
 Purpose:
 
@@ -601,11 +626,12 @@ Do you think you would have a competitive advantage if you implemented AI today?
 
 | Display option | Helper text | Answer key |
 | --- | --- | --- |
-| Yes, it would give us a meaningful advantage | We believe early adoption will directly improve our market position. | `yes_meaningful_advantage` |
-| Maybe, but I am not sure how much | It would help, but it might not be a game-changer. | `maybe_some_advantage` |
-| Not sure, I have not thought about it that way | Viewing AI more as a tool than a strategic differentiator. | `not_sure_not_thought_about_it` |
-| No, I do not think it would change much | Our competitive moat lies elsewhere. | `no_not_much_advantage` |
-| Our competitors are probably already ahead | We feel we are playing catch-up in our industry. | `competitors_already_ahead` |
+| Yes, it would give us a meaningful advantage   | You believe AI could help the business operate faster, serve customers better, or deliver more without scaling headcount at the same rate. | `yes_meaningful_advantage`      |
+| Maybe, but I am not sure how much              | You can see the potential upside, but the commercial impact still needs to be linked to specific workflows or business outcomes.           | `maybe_some_advantage`          |
+| Not sure, I have not thought about it that way | You may be viewing AI mainly as a productivity tool so far, rather than as something that could reshape cost, speed, or differentiation.   | `not_sure_not_thought_about_it` |
+| No, I do not think it would change much        | You may believe your edge comes from relationships, expertise, brand, or other factors that AI would not materially shift.                 | `no_not_much_advantage`         |
+| Our competitors are probably already ahead     | You feel there may already be an adoption gap, and the concern is less about being first than about not falling further behind.            | `competitors_already_ahead`     |
+
 
 Purpose:
 
@@ -624,16 +650,17 @@ required = true
 Question text:
 
 ```
-How urgent is this for you right now?
+If there were a practical, cost efficient AI solution that clearly addressed this for your business, how quickly would you want to act on it?
 ```
 
 | Display option | Helper text | Answer key | Urgency group |
 | --- | --- | --- | --- |
-| We need to fix this immediately | The current setup is breaking and we need a solution now. | `need_to_fix_immediately` | high |
-| We want to solve this within the next 3 months | A near-term priority for the upcoming quarter. | `within_3_months` | high |
-| We are exploring options for the next 6 months | On the roadmap, but not an immediate fire drill. | `within_6_months` | moderate |
-| It is interesting, but not urgent | Important to address eventually, but other things take priority. | `exploring_for_later` | low |
-| We are not currently looking to act | Just gathering information for the future. | `not_urgent` | low |
+| We would want to act immediately                  | The issue feels live, and you would be ready to explore a credible AI solution now.                                     | `need_to_fix_immediately` | high          |
+| We would likely act within the next 3 months      | This is a near-term priority, even if you still need to review the scope, cost, and implementation approach internally. | `within_3_months`         | high          |
+| We would consider acting within the next 6 months | The need is real, but you are still planning the right timing, use case, and budget before moving forward.              | `within_6_months`         | moderate      |
+| It matters, but we are not ready to act yet       | You recognise the opportunity, but it is not high enough on the agenda to move forward soon.                            | `exploring_for_later`     | low           |
+| I am not sure yet                                 | You may still be deciding whether this is a problem worth solving now or an opportunity to keep monitoring.             | `not_urgent`              | low           |
+
 
 Purpose:
 
@@ -873,15 +900,26 @@ For the deterministic classification matrix in section 7, treat `current_ai_use`
 
 The full `readiness_group` derived from `readiness_score` remains canonical. The shortcut above is used only when the matrix in section 7 references readiness.
 
-## 6.6 Grant interest group
+## 6.6 Funding practicality & Grant interest group
 
-| `grant_awareness` | `grant_interest_group` ||---|---|---|| `yes_aware` | `grant_ready` || `no_not_aware` | `grant_unaware_open` || `no_but_willing_to_try` | `grant_interested` || `not_relevant` | `grant_not_relevant` || `not_sure` | `grant_uncertain` |
+| `funding_practicality` | `grant_interest_group` ||---|---|---|| `open_to_support_if_available` | `grant_ready` || `not_sure_how_support_works` | `grant_unaware_open` || `upfront_cost_matters` | `grant_interested` || `need_cost_staged_or_structured` | `grant_interested` || `not_reliant_on_support` | `grant_not_relevant` |
 
 Cost objection flag:
 
 ```
 cost_objection_flag = true
 IF ai_non_adoption_reason = cost_or_budget_concern
+OR upfront_cashflow_concern_flag = true
+```
+
+Additional flags:
+
+```
+upfront_cashflow_concern_flag = true
+IF funding_practicality IN (upfront_cost_matters, need_cost_staged_or_structured)
+
+support_exploration_flag = true
+IF funding_practicality IN (open_to_support_if_available, not_sure_how_support_works)
 ```
 
 ## 6.7 Competitive advantage group
@@ -1290,7 +1328,7 @@ ai_use:{current_ai_use}
 
 ## 14.2 Pain tags
 
-| Signal | CRM tag ||---|---|---|| Q4 includes `customer_replies_support_followups` | `pain:customer_replies` || Q4 includes `sales_followups_proposals_crm` | `pain:sales_followup` || Q4 includes `finance_reporting_invoicing_tracking` | `pain:finance_reporting` || Q4 includes `admin_data_entry_documents` | `pain:admin_documents` || Q4 includes `internal_coordination_handover_approvals` | `pain:internal_coordination` || Q4 includes `meeting_notes_summaries_documentation` | `pain:meeting_notes` || Q4 includes `research_content_marketing_campaigns` | `pain:research_content` || `pain_area_count >= 3` | `pain:multi_workflow_friction` || `key_person_dependency IN (work_slows_down_immediately, decisions_get_delayed, customers_or_internal_teams_wait)` | `pain:key_person_risk` || `information_fragmentation = yes_information_is_everywhere` | `pain:information_fragmentation` || `cost_objection_flag = true` | `pain:cost_objection` || `ai_non_adoption_reason = do_not_know_where_to_start` | `pain:starting_point_block` || `ai_non_adoption_reason = lack_internal_technical_capability` | `pain:capability_block` || `ai_non_adoption_reason = team_too_busy_to_implement` | `pain:execution_bandwidth_block` || `ai_non_adoption_reason = not_sure_ai_will_work_for_us` | `pain:efficacy_doubt` || `ai_non_adoption_reason = security_data_privacy_concern` | `pain:security_concern` |
+| Signal | CRM tag ||---|---|---|| Q4 includes `customer_replies_support_followups` | `pain:customer_replies` || Q4 includes `sales_followups_proposals_crm` | `pain:sales_followup` || Q4 includes `finance_reporting_invoicing_tracking` | `pain:finance_reporting` || Q4 includes `admin_data_entry_documents` | `pain:admin_documents` || Q4 includes `internal_coordination_handover_approvals` | `pain:internal_coordination` || Q4 includes `meeting_notes_summaries_documentation` | `pain:meeting_notes` || Q4 includes `research_content_marketing_campaigns` | `pain:research_content` || `pain_area_count >= 3` | `pain:multi_workflow_friction` || `key_person_dependency IN (work_slows_down_immediately, decisions_get_delayed, customers_or_internal_teams_wait)` | `pain:key_person_risk` || `information_fragmentation = yes_information_is_everywhere` | `pain:information_fragmentation` || `cost_objection_flag = true` | `pain:cost_objection` || `upfront_cashflow_concern_flag = true` | `pain:cashflow_objection` || `ai_non_adoption_reason = do_not_know_where_to_start` | `pain:starting_point_block` || `ai_non_adoption_reason = lack_internal_technical_capability` | `pain:capability_block` || `ai_non_adoption_reason = team_too_busy_to_implement` | `pain:execution_bandwidth_block` || `ai_non_adoption_reason = not_sure_ai_will_work_for_us` | `pain:efficacy_doubt` || `ai_non_adoption_reason = security_data_privacy_concern` | `pain:security_concern` |
 
 ## 14.3 Stage and intent tags
 
@@ -1299,6 +1337,16 @@ stage:{company_stage}
 employees:{employee_count}
 goal:{ai_goal}
 non_adoption:{ai_non_adoption_reason}
+```
+
+Add support intent tags based on flags:
+
+```
+If support_exploration_flag = true
+Add tag: intent:support_exploration
+
+If funding_practicality = not_reliant_on_support
+Add tag: intent:not_reliant_on_support
 ```
 
 (Omit `non_adoption` if `ai_non_adoption_reason` is null.)
@@ -1328,6 +1376,8 @@ Every completed assessment must return this object.
   "readiness_score": "{number}",
   "urgency_group": "high | moderate | low",
   "cost_objection_flag": "true | false",
+  "upfront_cashflow_concern_flag": "true | false",
+  "support_exploration_flag": "true | false",
   "grant_interest_group": "grant_ready | grant_interested | grant_unaware_open | grant_not_relevant | grant_uncertain",
   "competitive_advantage_group": "strong_advantage_belief | moderate_advantage_belief | uncertain_advantage | low_advantage_belief | competitors_ahead",
   "report_key": "{report_key}",
@@ -1349,7 +1399,7 @@ Every completed assessment must return this object.
     "information_fragmentation": "{answer_key}",
     "current_ai_use": "{answer_key}",
     "ai_non_adoption_reason": "{answer_key | null}",
-    "grant_awareness": "{answer_key}",
+    "funding_practicality": "{answer_key}",
     "ai_goal": "{answer_key}",
     "competitive_advantage_belief": "{answer_key}",
     "urgency": "{answer_key}"
@@ -1377,8 +1427,10 @@ function evaluateAiAutomationAssessment(answers) {
   const companyFitGroup = deriveCompanyFitGroup(answers);
   const businessTypeGroup = deriveBusinessTypeGroup(answers.business_type);
   const friction = deriveOperationalFriction(answers, painAreaCount);
-  const costObjectionFlag = answers.ai_non_adoption_reason === "cost_or_budget_concern";
-  const grantInterestGroup = deriveGrantInterestGroup(answers.grant_awareness);
+  const upfrontCashflowConcernFlag = ["upfront_cost_matters", "need_cost_staged_or_structured"].includes(answers.funding_practicality);
+  const supportExplorationFlag = ["open_to_support_if_available", "not_sure_how_support_works"].includes(answers.funding_practicality);
+  const costObjectionFlag = answers.ai_non_adoption_reason === "cost_or_budget_concern" || upfrontCashflowConcernFlag;
+  const grantInterestGroup = deriveGrantInterestGroup(answers.funding_practicality);
   const competitiveAdvantageGroup = deriveCompetitiveAdvantageGroup(answers.competitive_advantage_belief);
   const opportunity = deriveAiOpportunity(answers, friction.group);
   const readiness = deriveReadiness(answers, grantInterestGroup, competitiveAdvantageGroup);
@@ -1481,6 +1533,8 @@ function evaluateAiAutomationAssessment(answers) {
     readiness_score: readiness.score,
     urgency_group: urgencyGroup,
     cost_objection_flag: costObjectionFlag,
+    upfront_cashflow_concern_flag: upfrontCashflowConcernFlag,
+    support_exploration_flag: supportExplorationFlag,
     grant_interest_group: grantInterestGroup,
     competitive_advantage_group: competitiveAdvantageGroup,
     report_key: report.report_key,
@@ -1502,7 +1556,7 @@ function evaluateAiAutomationAssessment(answers) {
 
 # 17. Test Cases
 
-| Case | Expected outcome ||---|---|---|| 21 to 50 employees, 2 time areas including customer/sales pain, urgent, believes AI gives advantage | `AI_CUSTOMER_REVENUE_HOT`, RP03 || 51 to 200 employees, 3+ time areas, scalable operating system goal, within 6 months | `AI_OPERATING_LEVERAGE_WARM`, RP02 (above-target cap) || 5 to 10 employees, finance/reporting pain, willing to explore grants, within 6 months | `AI_FINANCE_BACKOFFICE_WARM`, RP06; potential Hot if friction strong || Established SME, key person bottleneck and information everywhere, productivity goal, within 3 months | `AI_INTERNAL_WORKFLOW_HOT`, RP07 || Barely uses AI, cost concern, customer pain exists, willing to try grants, urgent | Hot via `customer_revenue_ops`, but if 7.6 override applies → `AI_CAPABILITY_GAP_HOT`, RP09 || Barely uses AI, does not think they need it, not urgent, low pain | `AI_LOW_FRICTION_COLD`, RP12 || Idea-stage, 1 to 4 employees, no pain, not urgent | `AI_TOO_EARLY_COLD`, RP12 || AI already embedded, no pain, not urgent | `AI_LOW_FRICTION_COLD`, RP12 || Competitors already ahead, strong friction, within 6 months | Hot if opportunity high; Warm otherwise || Grant curiosity only, no pain, not urgent | Cold, no sales notification || Only `not_sure_team_feels_busy` selected, established SME, urgent, strong advantage belief | `AI_CAPABILITY_GAP_HOT` if all gates met, otherwise `AI_CAPABILITY_GAP_WARM` || All seven concrete pain areas, accounting firm, urgent, build OS goal | `AI_OPERATING_LEVERAGE_HOT`, RP01 || 11 to 20 employees, moderate friction, low urgency, but strong advantage belief | `AI_OPERATING_LEVERAGE_WARM_LOW` or branch-specific WARM_LOW, RP02/04/06/08 |
+| Case | Expected outcome ||---|---|---|| 21 to 50 employees, 2 time areas including customer/sales pain, urgent, believes AI gives advantage | `AI_CUSTOMER_REVENUE_HOT`, RP03 || 51 to 200 employees, 3+ time areas, scalable operating system goal, within 6 months | `AI_OPERATING_LEVERAGE_WARM`, RP02 (above-target cap) || 5 to 10 employees, finance/reporting pain, willing to explore grants, within 6 months | `AI_FINANCE_BACKOFFICE_WARM`, RP06; potential Hot if friction strong || Established SME, key person bottleneck and information everywhere, productivity goal, within 3 months | `AI_INTERNAL_WORKFLOW_HOT`, RP07 || Barely uses AI, cost concern, customer pain exists, willing to try grants, urgent | Hot via `customer_revenue_ops`, but if 7.6 override applies → `AI_CAPABILITY_GAP_HOT`, RP09 || Barely uses AI, does not think they need it, not urgent, low pain | `AI_LOW_FRICTION_COLD`, RP12 || Idea-stage, 1 to 4 employees, no pain, not urgent | `AI_TOO_EARLY_COLD`, RP12 || AI already embedded, no pain, not urgent | `AI_LOW_FRICTION_COLD`, RP12 || Competitors already ahead, strong friction, within 6 months | Hot if opportunity high; Warm otherwise || Support exploration only, no pain, not urgent | Cold, no sales notification || Only `not_sure_team_feels_busy` selected, established SME, urgent, strong advantage belief | `AI_CAPABILITY_GAP_HOT` if all gates met, otherwise `AI_CAPABILITY_GAP_WARM` || All seven concrete pain areas, accounting firm, urgent, build OS goal | `AI_OPERATING_LEVERAGE_HOT`, RP01 || 11 to 20 employees, moderate friction, low urgency, but strong advantage belief | `AI_OPERATING_LEVERAGE_WARM_LOW` or branch-specific WARM_LOW, RP02/04/06/08 |
 
 ---
 
@@ -1516,7 +1570,7 @@ function evaluateAiAutomationAssessment(answers) {
 5. Hot users see a booking button only after valid business email submission.
 6. Cold emails must not contain discovery call language.
 7. Funding language must always include eligibility qualification.
-8. Grant curiosity alone must not create a Hot lead.
+8. Support exploration alone must not create a Hot lead.
 9. Competitive advantage belief alone must not create a Hot lead.
 10. Cost objection should trigger funding kicker and capability roadmap logic where appropriate.
 11. The report attachment is determined by report_key.
@@ -1548,7 +1602,7 @@ function evaluateAiAutomationAssessment(answers) {
 [ ] Sales notification fires for hot, and for warm with lead_score >= 70.
 [ ] Sales notification does not auto-fire for above_target_fit Hot leads.
 [ ] Funding language is qualified and never claims automatic entitlement.
-[ ] Grant awareness alone never produces a Hot lead.
+[ ] Q8 funding practicality alone never produces a Hot lead.
 [ ] Competitive advantage alone never produces a Hot lead.
 [ ] Every result code maps to exactly one result page variant.
 [ ] Every result page variant maps to exactly one report key.

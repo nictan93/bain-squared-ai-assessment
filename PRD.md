@@ -1,60 +1,57 @@
-# Bain Squared Intangible Value Scorecard — PRD
+# AI Automation Assessment — PRD
 
 ## Problem
 
-Singapore founders and SME owners issuing ESOPs, preparing for fundraises, or holding brand and IP assets routinely undervalue what they own. They either skip a formal valuation entirely, lean on a number their accountant pulled out of the air, or commission a report that sits in a drawer until the auditor asks for it. The current Bain Squared site explains the Intangible Asset Valuation pillar clearly, but it gives the visitor no way to self-assess. People who would qualify for a Black-Scholes ESOP valuation, a PPA in an active M&A process, or a relief-from-royalty engagement on a brand they're about to license read the page, nod, and leave. We don't capture them, and the next time they think about valuation they're three quarters into a deal and calling someone else.
+Singapore SME founders, CEOs, COOs, and operators know AI can reduce manual work. What they lack is a structured way to assess whether their business is genuinely ready to automate, which workflows are the right starting point, and what kind of support they may need. Without that, they either delay indefinitely, buy tools that sit unused, or commission engagements that start in the wrong place. The current Bain Squared site explains the AI Automation practice but gives the visitor no way to self-assess. They read the page and leave.
 
-The scorecard exists to convert that traffic into segmented, qualified pipeline for the IA Valuation pillar, and to do it in a way that reads like Bain Squared rather than a Typeform.
+The assessment exists to convert that traffic into segmented, qualified pipeline for AI automation engagements, and to do it in a way that reads like a Bain Squared diagnosis, not a Typeform.
 
 ## Goal
 
-Generate 8 to 12 qualified leads per month for Intangible Asset Valuation engagements, segmented by track (ESOP vs Brand/IP) and triage tier (hot, warm, education), with enough context in each lead for sales to make first contact without a discovery call.
+Generate qualified leads for AI automation engagements, classified by branch (operating system, customer and revenue, finance and back office, internal workflow, capability gap, starter), temperature (hot, warm, warm_low, cold), and funding signal, with enough context for sales to prioritise and make first contact without a generic discovery call.
 
 ## Non-goals
 
-Not a marketing widget. Not a calculator that returns a defensible valuation number. Not a tool that gates the assessment behind email. Not a portal with accounts, saved progress, or retake history. Not an internal admin dashboard. Lead data lives in Postgres; sales triages from a tagged email and SQL queries.
+Not a calculator that outputs a guaranteed ROI. Not a tool that gates the assessment behind email. Not a portal with accounts, saved progress, or retake history. Not an admin dashboard. Lead data is sent to Google Sheets via a GAS webhook. There is no Vercel Postgres or Resend in this project.
 
 ## Users
 
-The scorecard is built for four reader types, in priority order:
+The assessment is built for founders, CEOs, COOs, and SME owners in Singapore and Southeast Asia who:
 
-1. Late-stage founder or CFO issuing or refreshing an ESOP grant tranche, with audit, board, or IRAS pressure pushing the timeline.
-2. SME owner with brand or IP assets exploring whether there is valuation upside they are not capturing — typically driven by a licensing conversation, regional expansion, or an inbound M&A inquiry.
-3. Finance lead preparing for a Series A/B raise or a strategic sale where intangible asset recognition materially affects deal economics or PPA outcomes.
-4. Operator inside a family business or multi-shareholder SME where ownership risk has become live, often via shareholder restructuring or governance review.
+1. Carry visible manual workload across one or more workflows and are asking whether AI can help.
+2. Are exploring AI but have not yet identified where to start or how to fund it.
+3. Have begun using AI tools but lack a company-wide system tied to their actual workflows.
+4. Are experiencing friction from key-person dependency, information fragmentation, or coordination overhead.
 
-If the reader doesn't fit one of these four, the scorecard is not for them and should route them out cleanly.
+If the respondent is already fully automated, pre-revenue with no processes, or simply not interested, the assessment routes them to the education track and does not pitch an engagement.
 
 ## Core flow
 
-1. User lands on `assessment.bainsquared.com` (or `/scorecard`).
+1. User lands on the assessment page.
 2. Reads the positioning copy, clicks Start.
-3. Answers Q1 (routing) and, if "not sure," Q2 (clarifier).
-4. Routed to ESOP or Brand/IP track for 7 to 8 questions, including one open-text at the end.
-5. Sees their score, diagnosis, and recommended next step on the result page.
-6. Submits email to unlock the CTA to book a Bain Squared call.
-7. Receives a result email. Sales receives a tagged lead with the full submission, open-text answer prominently surfaced.
+3. Answers 11 or 12 questions (Q7A is conditional on Q7 answer).
+4. Sees their result page with diagnosis, badge, callout, and kicker blocks immediately — no gate.
+5. Submits business email to receive the assigned report and, for hot users, a booking CTA.
+6. GAS webhook receives the full structured payload including result code, CRM tags, and all answers.
 
-## Success metrics
+## Success metrics (v1 targets)
 
-- Completion rate (started → completed): ≥60%
-- Email capture rate (completed → submitted): ≥70%
-- Booked call rate (email submitted → call booked): ≥15%
-- Time to complete: ≤3 minutes median
-- Lead quality: ≥40% of submissions tagged as `esop_hot_lead`, `strategic_transaction_lead`, or `fundraising_valuation_lead`
+- Completion rate (started → completed): 60% or above
+- Email capture rate (completed → submitted): 70% or above
+- Booked call rate for hot users (submitted → call booked): 20% or above
+- Time to complete: under 4 minutes median
+- Hot and warm lead share: 40% or above of submissions
 
-These are v1 targets. Adjust after the first 30 days of real traffic.
+Adjust after the first 30 days of real traffic.
 
 ## Out of scope (v1)
 
-A/B testing different question copy. Partial progress saved across sessions. Blocking the same email from retaking the scorecard. White-label embeds for partners or syndication. A user-facing dashboard of past results. Anything that requires authentication.
+A/B testing question copy. Partial progress saved across sessions. Blocking the same email from retaking. Admin dashboards. Anything requiring authentication. Vercel Postgres or Resend email templates.
 
 ## Tech stack
 
-See PROJECT_GUIDE.md section 2. Next.js 14 on Vercel, TypeScript, Tailwind, Vercel Postgres, Resend, Framer Motion, Radix UI primitives. No additional libraries without sign-off from Nic.
+See `CONTEXT.md`. Next.js 14 on Vercel, TypeScript, Tailwind, React Hook Form, Zod, Framer Motion, Radix UI. GAS webhook for lead capture. No additional libraries without sign-off from Nic.
 
 ## Brand and tone
 
-See `Bain_Squared_context.md` and the voice rules in `CONTEXT.md`. The reader is a founder, CFO, or operator who has seen worse than the assessment they're about to take. The copy should match their pace: short declarative sentences when calling out an accountability moment, longer structured sentences when explaining a capital or governance consequence, no hedging, no encouragement, no exclamation points, no em dashes, no fundraising-advisor framing, no "former CFOs" credibility leaning. The bracket motif `[ ]` is the only signature flourish. Use it for the user's track name, their score, and the result label. Nowhere else.
-
-The conversion event is the booked call, not the email submission. Build the surface accordingly.
+See `../_shared/Bain_Squared_context.md` and voice rules in `CONTEXT.md`. The reader is a founder, CEO, COO, or SME owner who has seen worse than the assessment they are about to take. Copy should be direct, calm, and diagnostic. No exclamation points. No em dashes. No urgency manipulation. Funding language must always include qualification language. The result page should feel like an honest diagnosis, not a pitch.

@@ -38,6 +38,8 @@ export interface FullResult {
   readinessScore: number;
   urgencyGroup: UrgencyGroup;
   costObjectionFlag: boolean;
+  upfrontCashflowConcernFlag: boolean;
+  supportExplorationFlag: boolean;
   grantInterestGroup: GrantInterestGroup;
   competitiveAdvantageGroup: CompetitiveAdvantageGroup;
   reportKey: ReportKey;
@@ -283,17 +285,17 @@ function deriveReadiness(
   return { score, group };
 }
 
-// ── Section 6.6: Grant Interest Group ────────────────────────────────────
+// ── Section 6.6: Grant Interest Group (from funding_practicality, master spec 4.9 / 6.6) ──
 
 function deriveGrantInterestGroup(a: Answers): GrantInterestGroup {
   const map: Record<string, GrantInterestGroup> = {
-    yes_aware:             "grant_ready",
-    no_not_aware:          "grant_unaware_open",
-    no_but_willing_to_try: "grant_interested",
-    not_relevant:          "grant_not_relevant",
-    not_sure:              "grant_uncertain",
+    open_to_support_if_available:  "grant_ready",
+    not_sure_how_support_works:    "grant_unaware_open",
+    upfront_cost_matters:          "grant_interested",
+    need_cost_staged_or_structured:"grant_interested",
+    not_reliant_on_support:        "grant_not_relevant",
   };
-  return map[str(a, "grant_awareness")] ?? "grant_uncertain";
+  return map[str(a, "funding_practicality")] ?? "grant_uncertain";
 }
 
 // ── Section 6.7: Competitive Advantage Group ──────────────────────────────
@@ -830,13 +832,15 @@ function buildCrmTags(params: {
   urgencyGroup: UrgencyGroup;
   painAreaCount: number;
   costObjectionFlag: boolean;
+  upfrontCashflowConcernFlag: boolean;
+  supportExplorationFlag: boolean;
   a: Answers;
 }): string[] {
   const {
     temperature, branch, resultCode, reportKey, companyFitGroup, businessTypeGroup,
     operationalFrictionGroup, aiOpportunityGroup, readinessGroup,
     grantInterestGroup, competitiveAdvantageGroup, urgencyGroup,
-    painAreaCount, costObjectionFlag, a,
+    painAreaCount, costObjectionFlag, upfrontCashflowConcernFlag, supportExplorationFlag, a,
   } = params;
 
   // 14.1 Minimum tags
@@ -877,6 +881,7 @@ function buildCrmTags(params: {
   if (highKpd.has(kpd)) tags.push("pain:key_person_risk");
   if (frag === "yes_information_is_everywhere") tags.push("pain:information_fragmentation");
   if (costObjectionFlag) tags.push("pain:cost_objection");
+  if (upfrontCashflowConcernFlag) tags.push("pain:cashflow_objection");
 
   if (nonAdoption === "do_not_know_where_to_start")          tags.push("pain:starting_point_block");
   if (nonAdoption === "lack_internal_technical_capability")   tags.push("pain:capability_block");
@@ -889,6 +894,10 @@ function buildCrmTags(params: {
   tags.push(`employees:${str(a, "employee_count")}`);
   tags.push(`goal:${str(a, "ai_goal")}`);
   if (nonAdoption) tags.push(`non_adoption:${nonAdoption}`);
+
+  // Support intent tags (master spec section 14.3)
+  if (supportExplorationFlag) tags.push("intent:support_exploration");
+  if (str(a, "funding_practicality") === "not_reliant_on_support") tags.push("intent:not_reliant_on_support");
 
   return tags;
 }
@@ -938,7 +947,12 @@ export function calculateFullResult(
   const competitiveAdvGroup = deriveCompetitiveAdvantageGroup(a);
   const { score: readScore, group: readGroup }         = deriveReadiness(a, grantInterestGroup, competitiveAdvGroup);
   const urgencyGroup        = deriveUrgencyGroup(a);
-  const costObjectionFlag   = str(a, "ai_non_adoption_reason") === "cost_or_budget_concern";
+  // Funding flags (master spec section 6.6)
+  const fundingPracticality        = str(a, "funding_practicality");
+  const upfrontCashflowConcernFlag = fundingPracticality === "upfront_cost_matters" || fundingPracticality === "need_cost_staged_or_structured";
+  const supportExplorationFlag     = fundingPracticality === "open_to_support_if_available" || fundingPracticality === "not_sure_how_support_works";
+  // cost_objection_flag = true if ai_non_adoption_reason = cost_or_budget_concern OR upfront_cashflow_concern_flag
+  const costObjectionFlag = str(a, "ai_non_adoption_reason") === "cost_or_budget_concern" || upfrontCashflowConcernFlag;
 
   // 3. AI goal override (section 5.2)
   branch = applyAiGoalOverride(branch, a, frictionGroup);
@@ -990,7 +1004,8 @@ export function calculateFullResult(
     readinessGroup: readGroup,
     grantInterestGroup,
     competitiveAdvantageGroup: competitiveAdvGroup,
-    urgencyGroup, painAreaCount, costObjectionFlag, a,
+    urgencyGroup, painAreaCount, costObjectionFlag,
+    upfrontCashflowConcernFlag, supportExplorationFlag, a,
   });
 
   return {
@@ -1010,6 +1025,8 @@ export function calculateFullResult(
     readinessScore: readScore,
     urgencyGroup,
     costObjectionFlag,
+    upfrontCashflowConcernFlag,
+    supportExplorationFlag,
     grantInterestGroup,
     competitiveAdvantageGroup: competitiveAdvGroup,
     reportKey,
