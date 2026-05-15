@@ -280,8 +280,8 @@ function ResultContent() {
                 {/* Name + Company */}
                 <div className="grid grid-cols-2 gap-3">
                   <div className="space-y-1">
-                    <label htmlFor="name" className="text-xs font-sans text-text-secondary flex items-center gap-1">
-                      {RESULT_COPY.namePlaceholder}
+                    <label htmlFor="name" className="text-xs font-sans text-text-secondary flex flex-col gap-0.5">
+                      <span>{RESULT_COPY.namePlaceholder}</span>
                       <span className="text-text-tertiary">{RESULT_COPY.nameOptional}</span>
                     </label>
                     <input
@@ -294,8 +294,8 @@ function ResultContent() {
                     />
                   </div>
                   <div className="space-y-1">
-                    <label htmlFor="company" className="text-xs font-sans text-text-secondary flex items-center gap-1">
-                      {RESULT_COPY.companyPlaceholder}
+                    <label htmlFor="company" className="text-xs font-sans text-text-secondary flex flex-col gap-0.5">
+                      <span>{RESULT_COPY.companyPlaceholder}</span>
                       <span className="text-text-tertiary">{RESULT_COPY.companyOptional}</span>
                     </label>
                     <input

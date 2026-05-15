@@ -14,7 +14,7 @@ export const REPORT_TITLES: Record<ReportKey, string> = {
 
 // ── Booking URL ────────────────────────────────────────────────────────────
 
-export const BOOKING_URL = "https://cal.com/bain-squared/ai-automation";
+export const BOOKING_URL = "https://cal.com/bain-squared/ai";
 
 // ── Result page outcome interface ─────────────────────────────────────────
 

@@ -157,6 +157,7 @@ export default function ScorecardPage() {
       currentQuestionId: nextId,
       history: [...s.history, nextId],
     }));
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, [currentQuestion, canAdvance, state, router]);
 
   const handleBack = useCallback(() => {
